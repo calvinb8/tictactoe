@@ -15,5 +15,6 @@ abstract class Piece {
         return yCoordinate;
     }
 
-    
+    abstract void drawPiece();
+    abstract char getType();
 }
