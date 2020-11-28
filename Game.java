@@ -19,7 +19,14 @@ public class Game {
         boolean isWinner = false;
         while (!isWinner){
             // displaying the message for whose turn it is
-            // FIXME: do this with graphics
+            String message = "Current Player: ";
+            if (xTurn){
+                message += "X";
+            }
+            if (oTurn){
+                message += "O";
+            }
+            board.setMessage(message);
 
             // getting location where they clicked and drawing the appropriate piece
             // FIXME: do this with graphics
