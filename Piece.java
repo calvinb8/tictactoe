@@ -3,6 +3,7 @@ abstract class Piece {
     private int yCoordinate;
 
     Piece (int x, int y){
+        // creates the piece at the given coordinates
         xCoordinate = x;
         yCoordinate = y;
     }
