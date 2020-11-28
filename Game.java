@@ -25,7 +25,41 @@ public class Game {
             // FIXME: once graphics stuff is done this will be easy
 
             // winner checker
-            // FIXME: I just need to write a bunch of for loops yay
+            // FIXME: add in a thing that highlights the winning pieces if there's a winner
+            // horizontal
+            for (int i = 0; i < 3; ++i){
+                if (locations[i][0] == '\u0000' || locations[i][1] == '\u0000' || locations[i][2] == '\u0000'){
+                    continue;
+                }
+                if (locations[i][0] == locations[i][1] && locations[i][1] == locations[i][2]){
+                    isWinner = true;
+                    break;
+                }
+            }
+            // vertical
+            for (int i = 0; i < 3; ++i){
+                if (locations[0][i] == '\u0000' || locations[1][i] == '\u0000' || locations[2][i] == '\u0000'){
+                    continue;
+                }
+                if (locations[0][i] == locations[1][i] && locations[1][i] == locations[2][i]){
+                    isWinner = true;
+                    break;
+                }
+            }
+            // diagonal
+            if (locations[0][0] != '\u0000' && locations[1][1] != '\u0000' && locations[2][2] != '\u0000'){
+                if (locations[0][0] == locations[1][1] && locations[1][1] == locations[2][2]){
+                    isWinner = true;
+                    break;
+                }
+            }
+
+            if (locations[2][0] != '\u0000' && locations[0][2] != '\u0000' && locations[2][2] != '\u0000'){
+                if (locations[2][0] == locations[1][1] && locations[1][1] == locations[0][2]){
+                    isWinner = true;
+                    break;
+                }
+            }
 
             // number of turns checker
             if (numTurns == 9){
