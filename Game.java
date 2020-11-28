@@ -29,7 +29,7 @@ public class Game {
             board.setMessage(message);
 
             // getting location where they clicked and drawing the appropriate piece
-            // FIXME: do this with graphics
+            // FIXME: do this with graphics, also add piece objects
 
             // adding piece to array of locations
             // FIXME: once graphics stuff is done this will be easy
