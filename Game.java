@@ -1,4 +1,6 @@
 public class Game {
+    // main class to run the game
+
     public static void main(String[] args){
         // keeping track of whose turn it is
         boolean xTurn = true;
