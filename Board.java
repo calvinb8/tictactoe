@@ -1,6 +1,6 @@
 import javax.swing.JFrame;
 
-public class TicTacToeBoard {
+public class Board {
     public static void main(String[] args) {
         JFrame board = new JFrame();
 
@@ -8,7 +8,7 @@ public class TicTacToeBoard {
         board.setSize(600, 600);
         board.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        TicTacToeGrid grid = new TicTacToeGrid();
+        Grid grid = new Grid();
         board.add(grid);
 
         board.setVisible(true);

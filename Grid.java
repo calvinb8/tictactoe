@@ -4,7 +4,7 @@ import java.awt.Graphics2D;
 import java.awt.Rectangle;
 import javax.swing.JComponent;
 
-public class TicTacToeGrid extends JComponent {
+public class Grid extends JComponent {
 
     @Override
     public void paintComponent(Graphics g) {
