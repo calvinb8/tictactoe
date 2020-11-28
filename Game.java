@@ -2,6 +2,9 @@ public class Game {
     // main class to run the game
 
     public static void main(String[] args){
+        // drawing board
+        Board board = new Board();
+
         // keeping track of whose turn it is
         boolean xTurn = true;
         boolean oTurn = false;

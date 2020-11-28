@@ -1,7 +1,7 @@
 import javax.swing.JFrame;
 
 public class Board {
-    public static void main(String[] args) {
+    Board() {
         JFrame board = new JFrame();
 
         board.setTitle("Tic Tac Toe");
