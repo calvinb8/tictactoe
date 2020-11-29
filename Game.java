@@ -15,6 +15,10 @@ public class Game {
         // keeping track of piece locations
         char[][] locations = new char[3][3];
 
+        // keeping track of current coordinates
+        int xCoord;
+        int yCoord;
+
         // while loop to run game
         boolean isWinner = false;
         while (!isWinner){
@@ -29,10 +33,23 @@ public class Game {
             board.setMessage(message);
 
             // getting location where they clicked and drawing the appropriate piece
-            // FIXME: do this with graphics, also add piece objects
+            // FIXME: do this with graphics
+            xCoord = 0; // FIXME: figure out where they clicked
+            yCoord = 0; // FIXME: figure out where they clicked
+            if (xTurn){
+                board.drawPiece(xCoord, yCoord, 'x');
+            }
+            else {
+                board.drawPiece(xCoord, yCoord, 'o');
+            }
 
             // adding piece to array of locations
-            // FIXME: once graphics stuff is done this will be easy
+            if (xTurn){
+                locations[xCoord][yCoord] = 'x';
+            }
+            else {
+                locations[xCoord][yCoord] = 'o';
+            }
 
             // winner checker
             // FIXME: add in a thing that highlights the winning pieces if there's a winner
@@ -80,6 +97,16 @@ public class Game {
             xTurn = !xTurn;
             oTurn = !oTurn;
             numTurns++;
+        }
+
+        // after loop is broken the game is over
+
+        // tie
+        if (!isWinner){
+            board.setMessage("It's a tie!");
+        }
+        else {
+            // FIXME: draw/highlight the winning combination of pieces
         }
     }
 }
