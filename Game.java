@@ -128,14 +128,12 @@ public class Game {
         }
 
         // after loop is broken the game is over
-        // FIXME: use switch
         // tie
         if (winType == 0){
             board.setMessage("It's a tie!");
         }
         // win
         else {
-            // FIXME: highlight the winning combination of pieces
             // figuring out the winner
             // FIXME: this might be backwards, need to test it out
             String winner;
@@ -149,8 +147,48 @@ public class Game {
             board.setMessage("The winner is player " + winner + "!");
 
             // figuring out which ones to highlight
+            // 1-3 = horizontal, 4-6 = vertical, 7-8 = diagonal
             switch (winType){
-
+                case (1):
+                    board.highlightSquare(0, 0);
+                    board.highlightSquare(1, 0);
+                    board.highlightSquare(2, 0);
+                    break;
+                case (2):
+                    board.highlightSquare(0, 1);
+                    board.highlightSquare(1, 1);
+                    board.highlightSquare(2, 1);
+                    break;
+                case (3):
+                    board.highlightSquare(0, 2);
+                    board.highlightSquare(1, 2);
+                    board.highlightSquare(2, 2);
+                    break;
+                case (4):
+                    board.highlightSquare(0, 0);
+                    board.highlightSquare(0, 1);
+                    board.highlightSquare(0, 2);
+                    break;
+                case (5):
+                    board.highlightSquare(1, 0);
+                    board.highlightSquare(1, 1);
+                    board.highlightSquare(1, 2);
+                    break;
+                case (6):
+                    board.highlightSquare(2, 0);
+                    board.highlightSquare(2, 1);
+                    board.highlightSquare(2, 2);
+                    break;
+                case (7):
+                    board.highlightSquare(0, 0);
+                    board.highlightSquare(1, 1);
+                    board.highlightSquare(2, 2);
+                    break;
+                case (8):
+                    board.highlightSquare(0, 2);
+                    board.highlightSquare(1, 1);
+                    board.highlightSquare(2, 0);
+                    break;
             }
         }
     }
