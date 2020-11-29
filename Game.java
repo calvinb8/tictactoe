@@ -19,6 +19,10 @@ public class Game {
         int xCoord;
         int yCoord;
 
+        // tracking the winner
+        // 0 = tie, 1-3 = horizontal, 4-6 = vertical, 7-8 = diagonal
+        int winType = 0;
+
         // while loop to run game
         boolean isWinner = false;
         while (!isWinner){
@@ -60,6 +64,17 @@ public class Game {
                 }
                 if (locations[i][0] == locations[i][1] && locations[i][1] == locations[i][2]){
                     isWinner = true;
+                    switch (i){
+                        case (0):
+                            winType = 1;
+                            break;
+                        case (1):
+                            winType = 2;
+                            break;
+                        case (2):
+                            winType = 3;
+                            break;
+                    }
                     break;
                 }
             }
@@ -70,6 +85,17 @@ public class Game {
                 }
                 if (locations[0][i] == locations[1][i] && locations[1][i] == locations[2][i]){
                     isWinner = true;
+                    switch (i){
+                        case (0):
+                            winType = 4;
+                            break;
+                        case (1):
+                            winType = 5;
+                            break;
+                        case (2):
+                            winType = 6;
+                            break;
+                    }
                     break;
                 }
             }
@@ -77,6 +103,7 @@ public class Game {
             if (locations[0][0] != '\u0000' && locations[1][1] != '\u0000' && locations[2][2] != '\u0000'){
                 if (locations[0][0] == locations[1][1] && locations[1][1] == locations[2][2]){
                     isWinner = true;
+                    winType = 7;
                     break;
                 }
             }
@@ -84,6 +111,7 @@ public class Game {
             if (locations[2][0] != '\u0000' && locations[0][2] != '\u0000' && locations[2][2] != '\u0000'){
                 if (locations[2][0] == locations[1][1] && locations[1][1] == locations[0][2]){
                     isWinner = true;
+                    winType = 8;
                     break;
                 }
             }
@@ -100,13 +128,30 @@ public class Game {
         }
 
         // after loop is broken the game is over
-
+        // FIXME: use switch
         // tie
-        if (!isWinner){
+        if (winType == 0){
             board.setMessage("It's a tie!");
         }
+        // win
         else {
-            // FIXME: draw/highlight the winning combination of pieces
+            // FIXME: highlight the winning combination of pieces
+            // figuring out the winner
+            // FIXME: this might be backwards, need to test it out
+            String winner;
+            if (xTurn){
+                winner = "O";
+            }
+            else {
+                winner = "X";
+            }
+            // displaying winning message
+            board.setMessage("The winner is player " + winner + "!");
+
+            // figuring out which ones to highlight
+            switch (winType){
+
+            }
         }
     }
 }
