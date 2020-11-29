@@ -18,4 +18,14 @@ public class Board {
     public void setMessage(String message){
         // FIXME: add the ability to put a message at the bottom (using String message as the message)
     }
+
+    public void drawPiece(int x, int y, char type){
+        if (type == 'o'){
+            PieceO piece = new PieceO(x, y);
+        }
+        if (type == 'x'){
+            PieceX piece = new PieceX(x, y);
+        }
+        // FIXME: draw piece at given coordinates
+    }
 }
