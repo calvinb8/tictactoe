@@ -16,10 +16,12 @@ public class Board {
     }
 
     public void setMessage(String message){
+        // writes a message below the board
         // FIXME: add the ability to put a message at the bottom (using String message as the message)
     }
 
     public void drawPiece(int x, int y, char type){
+        // adds a piece at given coordinates and draws it on the board
         if (type == 'o'){
             PieceO piece = new PieceO(x, y);
         }
@@ -27,5 +29,10 @@ public class Board {
             PieceX piece = new PieceX(x, y);
         }
         // FIXME: draw piece at given coordinates
+    }
+
+    public void highlightSquare(int x, int y){
+        // highlights a given square (for winner)
+        // FIXME: add ability to highlight square
     }
 }
