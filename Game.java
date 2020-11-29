@@ -48,7 +48,12 @@ public class Game {
             }
 
             // adding piece to array of locations
-            if (xTurn){
+            if (locations[xCoord][yCoord] != '\u0000'){
+                // preventing player from choosing a spot that's already occupied
+                // FIXME: need to test whether this works
+                continue;
+            }
+            else if (xTurn){
                 locations[xCoord][yCoord] = 'x';
             }
             else {
