@@ -15,9 +15,11 @@ public class Board {
 
     }
 
-    public void setMessage(String message){
+    public void setMessage(String text){
         // writes a message below the board
-        // FIXME: add the ability to put a message at the bottom (using String message as the message)
+        // FIXME: idk why this doesn't work
+        Message message = new Message(text);
+        board.add(message);
     }
 
     public void drawPiece(int x, int y, char type){
