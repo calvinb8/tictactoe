@@ -7,6 +7,10 @@ public class PieceO extends Piece{
     @Override
     public void drawPiece(){
         // draws the o piece at the given coordinates
+        // FIXME: actually draw the piece
+        // converting from board coordinates to pixel coordinates
+        int actualX = (1 + super.getXCoordinate()) * 200 - 50;
+        int actualY = (1 + super.getYCoordinate()) * 200 - 50;
     }
 
     @Override

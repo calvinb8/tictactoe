@@ -24,11 +24,12 @@ public class Board {
         // adds a piece at given coordinates and draws it on the board
         if (type == 'o'){
             PieceO piece = new PieceO(x, y);
+            piece.drawPiece();
         }
         if (type == 'x'){
             PieceX piece = new PieceX(x, y);
+            piece.drawPiece();
         }
-        // FIXME: draw piece at given coordinates
     }
 
     public void highlightSquare(int x, int y){
