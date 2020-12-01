@@ -2,7 +2,7 @@ import java.awt.*;
 import java.awt.geom.Line2D;
 import javax.swing.JComponent;
 
-public class TicTacToeGrid extends JComponent {
+public class Grid extends JComponent {
 
     @Override
     public void paintComponent(Graphics g) {
