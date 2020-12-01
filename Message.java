@@ -15,6 +15,6 @@ public class Message extends JPanel {
     @Override
     public void paintComponent(Graphics g){
         // drawing the message at the bottom of the screen
-        g.drawString(text, 300, 650);
+        g.drawString(text, 30, 650);
     }
 }
