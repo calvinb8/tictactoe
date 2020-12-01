@@ -1,19 +1,73 @@
-public class PieceO extends Piece{
-    PieceO(int x, int y) {
+import javax.swing.*;
+import java.awt.*;
+
+public class PieceO extends JComponent{
+    private int x;
+    private int y;
+
+    PieceO(int xCoordinate, int yCoordinate) {
         // creates the piece at the given coordinates
-        super(x, y);
+        x = xCoordinate;
+        y = yCoordinate;
     }
 
     @Override
-    public void drawPiece(){
-        // draws the o piece at the given coordinates
-        // FIXME: actually draw the piece
-        // converting from board coordinates to pixel coordinates
-        int actualX = (1 + super.getXCoordinate()) * 200 - 50;
-        int actualY = (1 + super.getYCoordinate()) * 200 - 50;
+    public void paintComponent(Graphics g) {
+        // drawing the piece at its coordinates
+        Graphics2D graphicsObj = (Graphics2D) g;
+
+        switch (x){
+            case 0:
+                switch (y){
+                    case 0:
+                        // top left
+                        graphicsObj.drawOval(0, 0, 200, 200);
+                        break;
+                    case 1:
+                        // top middle
+                        graphicsObj.drawOval(210, 0, 190, 200);
+                        break;
+                    case 2:
+                        // top right
+                        graphicsObj.drawOval(410, 0, 190, 200);
+                        break;
+                }
+            break;
+            case 1:
+                switch (y){
+                    case 0:
+                        // middle left
+                        graphicsObj.drawOval(0, 210, 200, 190);
+                        break;
+                    case 1:
+                        // center
+                        graphicsObj.drawOval(210, 210, 190, 190);
+                        break;
+                    case 2:
+                        // middle right
+                        graphicsObj.drawOval(410, 210, 190, 190);
+                        break;
+                }
+            break;
+            case 2:
+                switch (y){
+                    case 0:
+                        // bottom left
+                        graphicsObj.drawOval(0, 410, 200, 190);
+                        break;
+                    case 1:
+                        // bottom middle
+                        graphicsObj.drawOval(210, 410, 190, 190);
+                        break;
+                    case 2:
+                        // bottom right
+                        graphicsObj.drawOval(410, 410, 190, 190);
+                        break;
+                }
+            break;
+        }
     }
 
-    @Override
     public char getType(){
         // returns the type of piece (o)
         return 'o';

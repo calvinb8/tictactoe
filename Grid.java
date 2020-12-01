@@ -23,6 +23,9 @@ public class Grid extends JComponent {
         Rectangle row2 = new Rectangle(0, 400, 600, 10);
         graphicsObj.fill(row2);
 
+
+        // FIXME: remove this once it's all transferred into the Piece classes
+        /*
         //Xs
         //center
         Line2D.Double center1 = new Line2D.Double(200, 200, 400, 400);
@@ -89,7 +92,7 @@ public class Grid extends JComponent {
         graphicsObj.drawOval(0, 0, 200, 200); //top left
         graphicsObj.drawOval(410, 0, 190, 200); //top right
         graphicsObj.drawOval(0, 410, 200, 190); //bottom left
-
+        */
 
     }
 }
