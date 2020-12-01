@@ -1,7 +1,12 @@
+import java.util.Scanner;
+
 public class Game {
     // main class to run the game
 
     public static void main(String[] args){
+        // FIXME: hopefully this is temporary
+        Scanner scnr = new Scanner(System.in);
+
         // drawing board
         Board board = new Board();
 
@@ -37,9 +42,17 @@ public class Game {
             board.setMessage(message);
 
             // getting location where they clicked and drawing the appropriate piece
-            // FIXME: do this with graphics
+            // FIXME: need to figure out where the user clicked
+            // FIXME: if this isn't possible, we can use the console
             xCoord = 0; // FIXME: figure out where they clicked
             yCoord = 0; // FIXME: figure out where they clicked
+
+            // FIXME: hopefully this is temporary
+            System.out.println("What is your x-coordinate? ");
+            xCoord = scnr.nextInt();
+            System.out.println("What is your y-coordinate? ");
+            yCoord = scnr.nextInt();
+
             if (xTurn){
                 board.drawPiece(xCoord, yCoord, 'x');
             }
