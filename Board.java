@@ -36,6 +36,8 @@ public class Board {
 
     public void highlightSquare(int x, int y){
         // highlights a given square (for winner)
-        // FIXME: add ability to highlight square
+        // FIXME: not sure why this isn't working
+        Highlight highlight = new Highlight(x, y);
+        board.add(highlight);
     }
 }
