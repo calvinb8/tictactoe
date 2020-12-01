@@ -17,9 +17,9 @@ public class PieceX extends JComponent{
         // drawing the piece at its given coordinates
         Graphics2D graphicsObj = (Graphics2D) g;
 
-        switch (x){
+        switch (y){
             case 0:
-                switch (y){
+                switch (x){
                     case 0:
                         // top left
                         Line2D.Double topLeft1 = new Line2D.Double(0, 0, 200, 200);
@@ -44,7 +44,7 @@ public class PieceX extends JComponent{
                 }
             break;
             case 1:
-                switch (y){
+                switch (x){
                     case 0:
                         // middle left
                         Line2D.Double centerLeft1 = new Line2D.Double(-10, 200, 200, 400);
@@ -69,7 +69,7 @@ public class PieceX extends JComponent{
                 }
             break;
             case 2:
-                switch (y){
+                switch (x){
                     case 0:
                         // bottom left
                         Line2D.Double bottomLeft1 = new Line2D.Double(-10, 400, 200, 600);

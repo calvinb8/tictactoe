@@ -20,6 +20,7 @@ public class Board {
         // FIXME: idk why this doesn't work
         Message message = new Message(text);
         board.add(message);
+        board.revalidate();
     }
 
     public void drawPiece(int x, int y, char type){
@@ -32,6 +33,7 @@ public class Board {
             PieceX piece = new PieceX(x, y);
             board.add(piece);
         }
+        board.revalidate();
     }
 
     public void highlightSquare(int x, int y){
@@ -39,5 +41,6 @@ public class Board {
         // FIXME: not sure why this isn't working
         Highlight highlight = new Highlight(x, y);
         board.add(highlight);
+        board.revalidate();
     }
 }

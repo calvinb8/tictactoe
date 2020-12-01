@@ -16,9 +16,9 @@ public class PieceO extends JComponent{
         // drawing the piece at its coordinates
         Graphics2D graphicsObj = (Graphics2D) g;
 
-        switch (x){
+        switch (y){
             case 0:
-                switch (y){
+                switch (x){
                     case 0:
                         // top left
                         graphicsObj.drawOval(0, 0, 200, 200);
@@ -34,7 +34,7 @@ public class PieceO extends JComponent{
                 }
             break;
             case 1:
-                switch (y){
+                switch (x){
                     case 0:
                         // middle left
                         graphicsObj.drawOval(0, 210, 200, 190);
@@ -50,7 +50,7 @@ public class PieceO extends JComponent{
                 }
             break;
             case 2:
-                switch (y){
+                switch (x){
                     case 0:
                         // bottom left
                         graphicsObj.drawOval(0, 410, 200, 190);
