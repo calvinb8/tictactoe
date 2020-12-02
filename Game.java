@@ -7,6 +7,9 @@ public class Game {
         // FIXME: hopefully this is temporary
         Scanner scnr = new Scanner(System.in);
 
+        // creating mouse listener
+        MyMouseListener mouse = new MyMouseListener();
+
         // drawing board
         Board board = new Board();
 
@@ -44,14 +47,24 @@ public class Game {
             // getting location where they clicked and drawing the appropriate piece
             // FIXME: need to figure out where the user clicked
             // FIXME: if this isn't possible, we can use the console
-            xCoord = 0; // FIXME: figure out where they clicked
-            yCoord = 0; // FIXME: figure out where they clicked
+            xCoord = mouse.xValue();
+            yCoord = mouse.yValue();
+            // while they haven't clicked keep waiting for them to click
+            while (xCoord == -1 || yCoord == -1){
+                xCoord = mouse.xValue();
+                yCoord = mouse.yValue();
+            }
 
+            //xCoord = 0; // FIXME: figure out where they clicked
+            //yCoord = 0; // FIXME: figure out where they clicked
+
+            /*
             // FIXME: hopefully this is temporary
             System.out.println("What is your x-coordinate? ");
             xCoord = scnr.nextInt();
             System.out.println("What is your y-coordinate? ");
             yCoord = scnr.nextInt();
+            */
 
             if (xTurn){
                 board.drawPiece(xCoord, yCoord, 'x');
