@@ -152,9 +152,8 @@ public class Game {
         // win
         else {
             // figuring out the winner
-            // FIXME: this might be backwards, need to test it out
             String winner;
-            if (xTurn){
+            if (oTurn){
                 winner = "O";
             }
             else {
