@@ -1,15 +1,23 @@
 import javax.swing.*;
 import java.awt.*;
 
-// FIXME: not sure why this isn't working
-
 public class Highlight extends JComponent {
     private int x;
     private int y;
+    private int width = 190;
+    private int height = 190;
 
     Highlight(int xCoordinate, int yCoordinate){
-        x = xCoordinate * 210;
-        y = yCoordinate * 210;
+        x = xCoordinate * 200 + 10;
+        y = yCoordinate * 200 + 10;
+        if (xCoordinate == 0){
+            x = 0;
+            width = 200;
+        }
+        if (yCoordinate == 0){
+            y = 0;
+            height = 200;
+        }
     }
 
     @Override
@@ -17,11 +25,10 @@ public class Highlight extends JComponent {
         Graphics2D graphicsObj = (Graphics2D) g;
 
         // making a transparent color
-        // FIXME: test transparency
-        Color color = new Color(255, 255, 153, 100);
+        Color color = new Color(255, 255, 153, 150);
 
         // making the outline
-        Rectangle box = new Rectangle(x, y, 180, 180);
+        Rectangle box = new Rectangle(x, y, width, height);
 
         // drawing the highlight
         graphicsObj.setColor(color);

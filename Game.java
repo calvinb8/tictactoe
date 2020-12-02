@@ -74,13 +74,12 @@ public class Game {
             }
 
             // winner checker
-            // FIXME: add in a thing that highlights the winning pieces if there's a winner
             // horizontal
             for (int i = 0; i < 3; ++i){
-                if (locations[i][0] == '\u0000' || locations[i][1] == '\u0000' || locations[i][2] == '\u0000'){
+                if (locations[0][i] == '\u0000' || locations[1][i] == '\u0000' || locations[2][i] == '\u0000'){
                     continue;
                 }
-                if (locations[i][0] == locations[i][1] && locations[i][1] == locations[i][2]){
+                if (locations[0][i] == locations[1][i] && locations[1][i] == locations[2][i]){
                     isWinner = true;
                     switch (i){
                         case (0):
@@ -98,10 +97,10 @@ public class Game {
             }
             // vertical
             for (int i = 0; i < 3; ++i){
-                if (locations[0][i] == '\u0000' || locations[1][i] == '\u0000' || locations[2][i] == '\u0000'){
+                if (locations[i][0] == '\u0000' || locations[i][1] == '\u0000' || locations[i][2] == '\u0000'){
                     continue;
                 }
-                if (locations[0][i] == locations[1][i] && locations[1][i] == locations[2][i]){
+                if (locations[i][0] == locations[i][1] && locations[i][1] == locations[i][2]){
                     isWinner = true;
                     switch (i){
                         case (0):
