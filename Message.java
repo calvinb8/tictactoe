@@ -1,11 +1,12 @@
 import javax.swing.*;
 import java.awt.*;
 
-// FIXME: idk why this doesn't work
+// FIXME: make it delete the text before it draws more
 
 public class Message extends JPanel {
     // the message
     private String text;
+    private JLabel message;
 
     Message(String message){
         // initializing Message
@@ -14,7 +15,10 @@ public class Message extends JPanel {
 
     @Override
     public void paintComponent(Graphics g){
+        message = new JLabel();
+        message.setText(text);
+
         // drawing the message at the bottom of the screen
-        g.drawString(text, 30, 650);
+        //g.drawString(text, 30, 650);
     }
 }
