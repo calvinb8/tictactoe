@@ -1,5 +1,4 @@
 import javax.swing.JFrame;
-import java.awt.*;
 
 public class Board {
     private JFrame board = new JFrame();
@@ -19,11 +18,6 @@ public class Board {
     public void setMessage(String text){
         // writes a message below the board
         // FIXME: need to delete messages
-        /*for (Component i : board.getComponents()){
-            if (i instanceof JFrame){
-                board.remove(i);
-            }
-        }*/
         Message message = new Message(text);
         board.add(message);
         board.revalidate();
