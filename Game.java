@@ -47,6 +47,7 @@ public class Game {
             // getting location where they clicked and drawing the appropriate piece
             // FIXME: need to figure out where the user clicked
             // FIXME: if this isn't possible, we can use the console
+            /*
             xCoord = mouse.xValue();
             yCoord = mouse.yValue();
             // while they haven't clicked keep waiting for them to click
@@ -54,29 +55,28 @@ public class Game {
                 xCoord = mouse.xValue();
                 yCoord = mouse.yValue();
             }
+            */
 
             //xCoord = 0; // FIXME: figure out where they clicked
             //yCoord = 0; // FIXME: figure out where they clicked
 
-            /*
+
             // FIXME: hopefully this is temporary
             System.out.println("What is your x-coordinate? ");
             xCoord = scnr.nextInt();
             System.out.println("What is your y-coordinate? ");
             yCoord = scnr.nextInt();
-            */
 
-            if (xTurn){
-                board.drawPiece(xCoord, yCoord, 'x');
+            // adding piece to array of locations and checking move validity
+            if (xCoord > 2 || xCoord < 0 || yCoord > 2 || yCoord < 0){
+                // if they try to go somewhere outside of the grid
+                // FIXME: this can probably be deleted if we figure out the clicking
+                board.setMessage("Invalid move");
+                continue;
             }
-            else {
-                board.drawPiece(xCoord, yCoord, 'o');
-            }
-
-            // adding piece to array of locations
-            if (locations[xCoord][yCoord] != '\u0000'){
+            else if (locations[xCoord][yCoord] != '\u0000'){
                 // preventing player from choosing a spot that's already occupied
-                // FIXME: need to test whether this works
+                board.setMessage("Invalid move");
                 continue;
             }
             else if (xTurn){
@@ -84,6 +84,13 @@ public class Game {
             }
             else {
                 locations[xCoord][yCoord] = 'o';
+            }
+
+            if (xTurn){
+                board.drawPiece(xCoord, yCoord, 'x');
+            }
+            else {
+                board.drawPiece(xCoord, yCoord, 'o');
             }
 
             // winner checker
@@ -166,7 +173,7 @@ public class Game {
         else {
             // figuring out the winner
             String winner;
-            if (oTurn){
+            if (xTurn){
                 winner = "O";
             }
             else {

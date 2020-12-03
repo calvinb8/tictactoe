@@ -18,9 +18,13 @@ public class Board {
     public void setMessage(String text){
         // writes a message below the board
         // FIXME: need to delete messages
+        /*
         Message message = new Message(text);
         board.add(message);
         board.revalidate();
+        */
+        // FIXME: remove this if we fix the messages on the GUI
+        System.out.println(text);
     }
 
     public void drawPiece(int x, int y, char type){
