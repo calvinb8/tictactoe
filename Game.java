@@ -153,15 +153,15 @@ public class Game {
                 }
             }
 
-            // number of turns checker
-            if (numTurns == 9){
-                break;
-            }
-
             // updating whose turn it is
             xTurn = !xTurn;
             oTurn = !oTurn;
             numTurns++;
+
+            // number of turns checker
+            if (numTurns == 9){
+                break;
+            }
         }
 
         // after loop is broken the game is over
