@@ -5,7 +5,7 @@ public class Board {
 
     Board() {
         board.setTitle("Tic Tac Toe");
-        board.setSize(600, 600);
+        board.setSize(610, 640);
         board.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         Grid grid = new Grid();
