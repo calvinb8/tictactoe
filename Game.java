@@ -1,10 +1,8 @@
 import java.util.Scanner;
 
 public class Game {
-    // main class to run the game
-
     public static void main(String[] args){
-        // FIXME: hopefully this is temporary
+        // creating a scanner for the user input in the console
         Scanner scnr = new Scanner(System.in);
 
         // drawing board
@@ -39,26 +37,9 @@ public class Game {
             if (oTurn){
                 message += "O";
             }
-            board.setMessage(message);
+            System.out.println(message);
 
-            // getting location where they clicked and drawing the appropriate piece
-            // FIXME: need to figure out where the user clicked
-            // FIXME: if this isn't possible, we can use the console
-            /*
-            xCoord = mouse.xValue();
-            yCoord = mouse.yValue();
-            // while they haven't clicked keep waiting for them to click
-            while (xCoord == -1 || yCoord == -1){
-                xCoord = mouse.xValue();
-                yCoord = mouse.yValue();
-            }
-            */
-
-            //xCoord = 0; // FIXME: figure out where they clicked
-            //yCoord = 0; // FIXME: figure out where they clicked
-
-
-            // FIXME: hopefully this is temporary
+            // prompting the user to enter the coordinates of their move
             System.out.println("What is your x-coordinate? ");
             xCoord = scnr.nextInt();
             System.out.println("What is your y-coordinate? ");
@@ -67,15 +48,15 @@ public class Game {
             // adding piece to array of locations and checking move validity
             if (xCoord > 2 || xCoord < 0 || yCoord > 2 || yCoord < 0){
                 // if they try to go somewhere outside of the grid
-                // FIXME: this can probably be deleted if we figure out the clicking
-                board.setMessage("Invalid move");
+                System.out.println("Invalid move");
                 continue;
             }
             else if (locations[xCoord][yCoord] != '\u0000'){
                 // preventing player from choosing a spot that's already occupied
-                board.setMessage("Invalid move");
+                System.out.println("Invalid move");
                 continue;
             }
+            // updating the array
             else if (xTurn){
                 locations[xCoord][yCoord] = 'x';
             }
@@ -83,6 +64,7 @@ public class Game {
                 locations[xCoord][yCoord] = 'o';
             }
 
+            // drawing the pieces on the board
             if (xTurn){
                 board.drawPiece(xCoord, yCoord, 'x');
             }
@@ -164,7 +146,7 @@ public class Game {
         // after loop is broken the game is over
         // tie
         if (winType == 0){
-            board.setMessage("It's a tie!");
+            System.out.println("It's a tie!");
         }
         // win
         else {
@@ -177,7 +159,7 @@ public class Game {
                 winner = "X";
             }
             // displaying winning message
-            board.setMessage("The winner is player " + winner + "!");
+            System.out.println("The winner is player " + winner + "!");
 
             // figuring out which ones to highlight
             // 1-3 = horizontal, 4-6 = vertical, 7-8 = diagonal

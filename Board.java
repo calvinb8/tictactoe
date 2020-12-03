@@ -1,30 +1,21 @@
 import javax.swing.JFrame;
 
 public class Board {
+    // creating the GUI window
     private JFrame board = new JFrame();
 
     Board() {
+        // setting up the board
         board.setTitle("Tic Tac Toe");
         board.setSize(610, 640);
         board.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
+        // adding the grid to the board
         Grid grid = new Grid();
         board.add(grid);
 
         board.setVisible(true);
 
-    }
-
-    public void setMessage(String text){
-        // writes a message below the board
-        // FIXME: need to delete messages
-        /*
-        Message message = new Message(text);
-        board.add(message);
-        board.revalidate();
-        */
-        // FIXME: remove this if we fix the messages on the GUI
-        System.out.println(text);
     }
 
     public void drawPiece(int x, int y, char type){

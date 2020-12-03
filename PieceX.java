@@ -95,9 +95,4 @@ public class PieceX extends JComponent{
             break;
         }
     }
-
-    public char getType(){
-        // returns the type of piece (x)
-        return 'x';
-    }
 }

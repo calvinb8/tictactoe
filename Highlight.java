@@ -8,6 +8,7 @@ public class Highlight extends JComponent {
     private int height = 190;
 
     Highlight(int xCoordinate, int yCoordinate){
+        // adjusting the coordinates to work with the window
         x = xCoordinate * 200 + 10;
         y = yCoordinate * 200 + 10;
         if (xCoordinate == 0){

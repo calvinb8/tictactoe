@@ -67,9 +67,4 @@ public class PieceO extends JComponent{
             break;
         }
     }
-
-    public char getType(){
-        // returns the type of piece (o)
-        return 'o';
-    }
 }
