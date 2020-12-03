@@ -7,9 +7,6 @@ public class Game {
         // FIXME: hopefully this is temporary
         Scanner scnr = new Scanner(System.in);
 
-        // creating mouse listener
-        MyMouseListener mouse = new MyMouseListener();
-
         // drawing board
         Board board = new Board();
 
